@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require("./DB/conn");
+const users = require("./models/userSchema");
 
 
 const port = 8003;
