@@ -42,3 +42,12 @@
 .container{
   overflow: auto;
 }
+.leftview h3{
+  font-size: 21px;
+}
+.leftview p{
+  font-weight: 600px;
+}
+.leftview span{
+  font-weight: 400px;
+}
