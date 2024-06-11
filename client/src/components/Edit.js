@@ -1,5 +1,5 @@
-import React, { useState, useEffect ,} from 'react'
-import { NavLink,useParams } from 'react-router-dom'
+import React, { useState, useEffect, } from 'react'
+import { NavLink, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -60,6 +60,32 @@ const Edit = () => {
   useEffect(() => {
     getdata();
   }, [])
+
+
+  const updateuser = async (e) => {
+    e.preventDefault();
+    const { address, age, desc, email, mobile, name, work } = inpval;
+    const res2 = await fetch(`/updateuser/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        address, age, desc, email, mobile, name, work
+      })
+    })
+    const data2 = await res2.json();
+    console.log(data2);
+    if (res2.status === 422 || !data2) {
+      alert("fill data");
+    } else {
+        alert("data added");
+    }
+  }
+
+
+
+
   return (
     <div className='container'>
       <NavLink to="/"> Home </NavLink>
@@ -97,7 +123,7 @@ const Edit = () => {
           </Form.Group>
 
 
-          <Button variant="primary" type="submit">
+          <Button onClick={updateuser} variant="primary" type="submit">
             Submit
           </Button>
         </div>
