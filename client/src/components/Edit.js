@@ -1,5 +1,5 @@
 import React, { useState, useEffect, } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -8,6 +8,9 @@ import Form from 'react-bootstrap/Form';
 const Edit = () => {
   // const [getuserdata, setUserdata] = useState([]);
   // console.log(getuserdata)
+
+  const navigate = useNavigate("");
+
   const [inpval, setINP] = useState({
     name: "",
     email: "",
@@ -80,6 +83,7 @@ const Edit = () => {
       alert("fill data");
     } else {
         alert("data added");
+        navigate("/")
     }
   }
 

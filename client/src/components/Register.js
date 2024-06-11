@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink,useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Register = () => {
+
+  const navigate = useNavigate("");
 
   const [inpval,setINP] = useState({
     name:"",
@@ -49,6 +51,7 @@ const Register = () => {
     }else{
       alert("data added");
       console.log("data added");
+      navigate("/")
     }
 
   }
