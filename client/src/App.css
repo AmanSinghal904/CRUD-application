@@ -51,3 +51,7 @@
 .leftview span{
   font-weight: 400px;
 }
+#addbtn a{
+  color:white;
+  text-decoration: none;
+}

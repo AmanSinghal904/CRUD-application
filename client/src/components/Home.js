@@ -9,7 +9,7 @@ const Home = () => {
         <div className='mt-5'>
             <div className="container">
                 <div className="add_btn" mt-2>
-                    <button className='btn btn-primary'> Add data</button>
+                    <button id = "addbtn" className='btn btn-primary'><a href = "/register"> Add data </a></button>
                 </div>
             </div>
             <Table striped bordered hover>

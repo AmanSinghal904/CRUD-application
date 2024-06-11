@@ -25,7 +25,33 @@ const Register = () => {
       }
     })
   }
+  const addinpdata= async(e)=>{
+    e.preventDefault();
+    const {address,age,desc,email,mobile,name,work}=inpval;
 
+    const res = await fetch("/register",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        address,age,desc,email,mobile,name,work
+
+      })
+    })
+
+    const data = await res.json();
+    console.log(data)
+
+    if(res.status === 404 || !data){
+      alert("error");
+      console.log("error");
+    }else{
+      alert("data added");
+      console.log("data added");
+    }
+
+  }
 
   return (
     <div className='container'>
@@ -64,7 +90,7 @@ const Register = () => {
           </Form.Group>
 
 
-          <Button variant="primary" type="submit">
+          <Button onClick ={addinpdata} variant="primary" type="submit">
             Submit
           </Button>
         </div>
