@@ -73,7 +73,7 @@ const Home = () => {
             <th>Email</th>
             <th>Job</th>
             <th>Mobile</th>
-            <th></th>
+            <th>Actions</th>
 
           </tr>
         </thead>
